@@ -1,0 +1,99 @@
+
+
+.zui-table {
+    border: 2px solid  #cce6ff;
+    border-collapse: collapse;
+    border-spacing: 2;
+    font: normal 15px Arial, sans-serif;
+    background: linear-gradient(to top, black, 2%, #e3f2fd);
+
+}
+.zui-table thead th {
+    border: 2px solid  #cce6ff;
+    color: #336B6B;
+    padding: 2px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: 2px solid  #cce6ff;
+    padding: 2px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.text{
+    color: black;
+}
+.red {
+    background: linear-gradient(to bottom, #ff6666 17%, #ffffff 100%);
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.closeSupport{
+     background-color: lightgreen;
+     animation: blinker 3s linear infinite;
+}
+
+.closeResistance{
+     background: linear-gradient(to bottom, #ff6666 17%, #ffffff 100%);
+     animation: blinker 3s linear infinite;
+}
+
+.frasi{
+     background-image: radial-gradient(green, white, red);
+     animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.bordertop
+{
+    background-image: url(../assets/dopotable.png);
+    background-repeat: repeat-x;
+    width: 1600px;
+    height: 586px;
+}
+
+ .refresh-button {
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 16px;
+    border-radius: 5px;
+    border: solid 1px #84bcf3;
+    background: linear-gradient(180deg, #79bcff 5%, #378ee5 100%);
+    text-shadow: 1px 1px 0px #528fcc;
+    box-shadow: inset 1px 1px 0px 0px #bbdaf7;
+}
+ .refresh-button:hover {
+    background: linear-gradient(180deg, #378ee5 5%, #79bcff 100%);
+}
+ .refresh-button:active {
+    position: relative;
+    top: 1px;
+}
+ .refresh-button-text {
+    padding: 9px 18px;
+    float: left;
+}
+ .refresh-button-text span{
+    position: relative;
+    display: block;
+    transform: rotate(0deg);
+}
+ .refresh-button-icon {
+    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: rgba(0, 0, 0, 0.14) -1px 0px 0px inset;
+    border-radius: 5px 0 0 5px;
+    padding: 9px 10px;
+    float: left;
+}
+

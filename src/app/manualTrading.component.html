@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Trading Page</title>
+</head>
+<body>
+<div class = "zui-table">
+  <table border=1 frame=void rules=rows>
+    <tr>
+      <th class = "text">Symbol</th>
+      <th class = "text">Last Update</th>
+      <th class = "text">Last Close</th>
+      <th class = "text">Supports</th>
+      <th class = "text">Resistances</th>
+      <th class = "text">Trend Lines-Supports</th>
+      <th class = "text">Trend Lines-Resistances</th>
+      <th class = "text">% 5 1H</th>
+      <th class = "text">% 5 4H</th>
+
+    </tr>
+    <tr *ngFor="let cross of all_infos">
+      <td ><p class="text">{{ cross.symbol }}</p></td>
+      <td > <p class="text">{{ cross.last_update}} </p></td>
+      <td> <p class="text">{{ cross.close }}</p></td>
+      <td>
+        <ul>
+          <li *ngFor="let item of cross.line_bullish" [ngClass]="{'closeSupport':item.dist < 20, 'text': item.dist>20}">
+            {{item.name}} {{item.dist}}
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let item of cross.line_bearish" [ngClass]="{'closeResistance':item.dist > -20, 'text': item.dist>20}">
+            {{item.name}} {{item.dist}}
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let item of cross.trend_bullish" [ngClass]="{'closeSupport':item.dist < 20, 'text': item.dist>20}">
+            {{item.name}} {{item.dist}}
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let item of cross.trend_bearish" [ngClass]="{'closeResistance':item.dist > -20, 'text': item.dist>20}">
+            {{item.name}} {{item.dist}}
+          </li>
+        </ul>
+      </td>
+      <td [ngClass]="{'red': cross.percentage1H < 0, 'green': cross.percentage1H >= 0}">{{cross.percentage1H}}%</td>
+      <td [ngClass]="{'red': cross.percentage4H < 0, 'green': cross.percentage4H >= 0}">{{cross.percentage4H}}%</td>
+
+    </tr>
+  </table>
+</div>
+<a (click)="refreshInfo()"class="refresh-button">
+  <span class="refresh-button-icon"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+  <span class="refresh-button-text"><span>Refresh Info</span></span>
+</a>
+
+<div class="bordertop"></div>
+</body>
+</html>
